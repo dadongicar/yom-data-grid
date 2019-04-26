@@ -92,9 +92,19 @@ if(renderData.length) {
 							if(isHeaderData) {%>
 								&nbsp;
 							<%} else if(checkable) {%>
-								<input class="yom-data-grid-check-box" data-row-index="<%=i%>" type="checkbox" <%=selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? 'checked' : ''%> />
+								<label class="<%=selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? 'yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked' : 'yom-data-grid-check-box-wrapper'%>">
+									<span class="<%=selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? 'yom-data-grid-check-box yom-data-grid-check-box-checked' : 'yom-data-grid-check-box'%>">
+										<input class="yom-data-grid-check-box-input" data-row-index="<%=i%>" type="checkbox" <%=selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? 'checked' : ''%> />
+										<span class="yom-data-grid-check-box-inner">
+									</span>
+								</label>
 							<%} else {%>
-								<input class="yom-data-grid-check-box" data-row-index="<%=i%>" type="checkbox" disabled />
+								<label class="<%=selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? 'yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked' : 'yom-data-grid-check-box-wrapper'%>">
+									<span class="<%=selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? 'yom-data-grid-check-box yom-data-grid-check-box-checked' : 'yom-data-grid-check-box'%>">
+										<input class="yom-data-grid-check-box-input" data-row-index="<%=i%>" type="checkbox" disabled />
+										<span class="yom-data-grid-check-box-inner">
+									</span>
+								</label>
 							<%}
 						} else {%>
 							<%=reactElement ? '' : (displayValue || '&nbsp;')%>

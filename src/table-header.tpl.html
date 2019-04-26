@@ -13,7 +13,12 @@ var filterable = column.filterable && opt.filterable !== false;
 		<div data-column-id="<%=column.id%>" class="yom-data-grid-cell-inner yom-data-grid-header-cell-inner <%=filterable ? 'yom-data-grid-header-cell-inner-filterable' : ''%>" style="text-align: <%=column.textAlign || 'left'%>;">
 			<%if(column.type == 'checkbox') {->columnHeader%>
 				<%if(!(maxSelection > 0)) {->columnHeader%>
-					<input class="yom-data-grid-check-box-all" type="checkbox" <%=isAllChecked ? 'checked' : ''%> />
+					<label class="yom-data-grid-check-box-wrapper yom-data-grid-check-box-all-wrapper">
+						<span class="yom-data-grid-check-box">
+							<input class="yom-data-grid-check-box-input yom-data-grid-check-box-all" type="checkbox" <%=isAllChecked ? 'checked' : ''%> />
+							<span class="yom-data-grid-check-box-inner">
+						</span>
+					</label>
 				<%} else {->columnHeader%>
 					&nbsp;
 				<%}%>

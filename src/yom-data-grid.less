@@ -1,10 +1,10 @@
 // Variables
-@yom-data-grid-border-color: #ccc;
+@yom-data-grid-border-color: #e8e8e8;
 @gray-dark: #555;
-@primary-color: #238bfa;
+@primary-color: #325fdc;
 @font-size-base: 14px;
 @line-height-base: 20px;
-@header-row-height: 39px;
+@header-row-height: 40px;
 
 // Clearfix
 // --------
@@ -85,6 +85,7 @@
 .yom-data-grid-container {
 	height: 100%;
 	position: relative;
+	border-radius: 4px 4px 0 0;
 }
 
 .yom-data-grid {
@@ -108,8 +109,13 @@
 	overflow: hidden;
 }
 
+.yom-data-grid .yom-data-grid-header {
+	background-color: #fafafa;
+}
+
 .yom-data-grid-table th {
 	text-align: left;
+	background-color: #fafafa;
 }
 .yom-data-grid-table td {
 	background-color: #fff;
@@ -121,8 +127,31 @@
 	padding: 11px 9px;
 }
 
+.yom-data-grid-cell-inner-left {
+	text-align: left;
+}
+.yom-data-grid-cell-inner-center {
+	text-align: center;
+}
+.yom-data-grid-cell-inner-right {
+	text-align: right;
+}
+
 .yom-data-grid-cell-inner-dummy {
 	height: 1px;
+}
+
+th .yom-data-grid-cell-inner,
+.yom-data-grid-bordered th .yom-data-grid-cell-inner,
+.yom-data-grid-bordered-v th .yom-data-grid-cell-inner {
+	border-bottom: solid 1px @yom-data-grid-border-color;
+}
+[class*="yom-data-grid-header-rows-"] th .yom-data-grid-cell-inner, .yom-data-grid-bordered-v [class*="yom-data-grid-header-rows-"] th .yom-data-grid-cell-inner {
+	border-bottom: solid 1px @yom-data-grid-border-color;
+}
+.yom-data-grid-sequence-cell .yom-data-grid-cell-inner,
+.yom-data-grid-bordered-h .yom-data-grid-sequence-cell .yom-data-grid-cell-inner {
+	border-right: solid 1px @yom-data-grid-border-color;
 }
 
 // Bordered
@@ -136,20 +165,14 @@
 .yom-data-grid-bordered-v .yom-data-grid-cell-inner {
 	border-bottom: none;
 }
-.yom-data-grid-bordered th .yom-data-grid-cell-inner {
-	border-bottom-width: 2px;
-}
 .yom-data-grid-bordered .yom-data-grid-last-row .yom-data-grid-cell-inner {
 	border-bottom: none;
 }
 .yom-data-grid-bordered .yom-data-grid-last-cell .yom-data-grid-cell-inner {
 	border-right: none;
 }
-[class*="yom-data-grid-header-rows-"].yom-data-grid-bordered th .yom-data-grid-cell-inner {
-	border-bottom-width: 1px;
-}
 .yom-data-grid-bordered .yom-data-grid-header .yom-data-grid-last-row .yom-data-grid-cell-inner {
-	border-bottom: solid 2px @yom-data-grid-border-color;
+	border-bottom: solid 1px @yom-data-grid-border-color;
 }
 
 // Locked
@@ -160,12 +183,17 @@
 }
 
 .yom-data-grid-locked-columns {
-	border-right: solid 2px @yom-data-grid-border-color;
+	border-right: solid 1px @yom-data-grid-border-color;
+}
+
+.yom-data-grid-locked-columns-scroll {
+	box-shadow: 6px 0 6px -4px rgba(0,0,0,0.15);
+	z-index: 99;
 }
 
 // Striped
 .yom-data-grid-striped .yom-data-grid-table .yom-data-grid-row-odd td {
-	background-color: #f8f8f8;
+	background-color: #fff;
 }
 
 // Sortable
@@ -177,9 +205,10 @@
 	display: inline-block;
 	width: 8px;
 	height: 10px;
-	vertical-align: middle;
-	margin-left: 3px;
+	vertical-align: baseline;
+	margin-right: 3px;
 	position: relative;
+	margin-left: .57142857em;
 }
 .yom-data-grid-sort-arrow:before, .yom-data-grid-sort-arrow:after {
 	display: block;
@@ -193,11 +222,11 @@
 }
 .yom-data-grid-sort-arrow:before {
 	bottom: 0;
-	border-top: 4px solid lighten(@gray-dark, 25%);
+	border-top: 4px solid lighten(@gray-dark, 35%);
 }
 .yom-data-grid-sort-arrow:after {
 	top: 0;
-	border-bottom: 4px solid lighten(@gray-dark, 25%);
+	border-bottom: 4px solid lighten(@gray-dark, 35%);
 }
 .yom-data-grid-sort-arrow-down:before {
 	border-top: 4px solid @primary-color;
@@ -212,22 +241,18 @@
 	.yom-data-grid-filter-icon {
 		position: absolute;
 		width: 20px;
-		height: 20px;
-		line-height: 20px;
+		height: @font-size-base * 1.2 + 22;
+		line-height: @font-size-base * 1.2 + 22;
 		text-align: center;
-		top: 50%;
-		right: 5px;
-		margin-top: -10px;
+		top: 0;
+		right: 0px;
 		cursor: pointer;
-		color: @gray-dark;
+		margin: 0;
+		color: lighten(@gray-dark, 35%);
 		.border-radius(2px);
 		&:hover {
 			background-color: #eee;
 		}
-	}
-	.yom-data-grid-filter-icon-left {
-		left: 9px;
-		right: auto;
 	}
 	&:hover {
 		.yom-data-grid-filter-remove-icon {
@@ -239,9 +264,20 @@
 			}
 		}
 	}
+	> a, > span {
+		white-space: nowrap;
+	}
 }
 .yom-data-grid-header-cell-inner-filterable {
 	padding-right: 24px;
+	&.yom-data-grid-header-cell-inner-align-right {
+		padding-right: 9px;
+		padding-left: 24px;
+		.yom-data-grid-filter-icon {
+			left: 5px;
+			right: auto;
+		}
+	}
 }
 .yom-data-grid-filter-panel {
 	position: absolute;
@@ -396,13 +432,22 @@
 	background-color: #f2dede;
 }
 .yom-data-grid .yom-data-grid-table .yom-data-grid-row-hl td {
-	background-color: #ffffee;
+	background-color: #e6f7ff;
 }
 .yom-data-grid .yom-data-grid-table .yom-data-grid-row-checked.yom-data-grid-row-hl td {
-	background-color: #d4e9ff;
+	background-color: #e6f7ff;
 }
 .yom-data-grid .yom-data-grid-table .yom-data-grid-row-error.yom-data-grid-row-hl td {
 	background-color: #ebcccc;
+}
+.yom-data-grid .yom-data-grid-table .yom-data-grid-row-click-hl td {
+	background-color:#e6f7ff;
+}
+.yom-data-grid .yom-data-grid-table .yom-data-grid-row-checked.yom-data-grid-row-click-hl td {
+	background-color:  #e6f7ff;
+}
+.yom-data-grid .yom-data-grid-table .yom-data-grid-row-error.yom-data-grid-row-click-hl td {
+	background-color: #f3c4c4;
 }
 
 // Sequence
@@ -423,18 +468,44 @@
 .yom-data-grid-checkbox-cell .yom-data-grid-cell-inner {
 	text-overflow: clip;
 }
-.yom-data-grid-checkbox-cell input[type="checkbox"] {
-	margin: 0;
-}
+// .yom-data-grid-checkbox-cell input[type="checkbox"] {
+// 	margin: 0;
+// }
 
-// Checkbox
+// Form Cell
 .yom-data-grid-form-cell .yom-data-grid-cell-inner {
 	padding: 2px;
+	> .btn-icon {
+		min-width: 36px;
+		margin-right: 2px;
+		padding-left: 0;
+		padding-right: 0;
+		&.btn-sm {
+			min-width: 32px;
+			margin-right: 4px;
+			margin-top: 2px;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+.yom-data-grid-bordered .yom-data-grid-form-cell .yom-data-grid-cell-inner {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.yom-data-grid-form-cell .yom-data-grid-cell-inner-left {
+	.btn-icon.btn-sm {
+		&:first-child {
+			margin-left: 2px;
+		}
+	}
 }
 
 // Clickable
 .yom-data-grid-row-clickable .yom-data-grid-content-cell {
 	cursor: pointer;
+
 }
 
 // 100% height

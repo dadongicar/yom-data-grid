@@ -228,7 +228,7 @@ exports.render = render;
 
 var moduleUri = typeof module != "undefined" && module.uri;
 
-var expo = yomCssModuleHelper("", '.yom-data-grid-filter-panel .btn-default,.yom-data-grid-filter-panel .btn-primary,.yom-data-grid-setting-panel .btn-default,.yom-data-grid-setting-panel .btn-primary{min-width:62px}.yom-data-grid-container{height:100%;position:relative}.yom-data-grid{border:1px solid #ccc;height:100%;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid:after,.yom-data-grid:before{display:table;content:"";line-height:0}.yom-data-grid:after{clear:both}.yom-data-grid-locked table{table-layout:fixed}.yom-data-grid-locked table td,.yom-data-grid-locked table th{line-height:20px}.yom-data-grid-locked table td i[class^=icon]{font-size:17.5px}.yom-data-grid .yom-data-grid-body,.yom-data-grid .yom-data-grid-header{overflow:hidden}.yom-data-grid-table th{text-align:left}.yom-data-grid-table td{background-color:#fff}.yom-data-grid-cell-inner{line-height:15.4px;font-size:14px;padding:11px 9px}.yom-data-grid-cell-inner-dummy{height:1px}.yom-data-grid-bordered .yom-data-grid-cell-inner{border-bottom:solid 1px #ccc;border-right:solid 1px #ccc}.yom-data-grid-bordered .yom-data-grid-last-cell .yom-data-grid-cell-inner,.yom-data-grid-bordered-h .yom-data-grid-cell-inner{border-right:none}.yom-data-grid-bordered-v .yom-data-grid-cell-inner{border-bottom:none}.yom-data-grid-bordered th .yom-data-grid-cell-inner{border-bottom-width:2px}.yom-data-grid-bordered .yom-data-grid-last-row .yom-data-grid-cell-inner{border-bottom:none}[class*=yom-data-grid-header-rows-].yom-data-grid-bordered th .yom-data-grid-cell-inner{border-bottom-width:1px}.yom-data-grid-bordered .yom-data-grid-header .yom-data-grid-last-row .yom-data-grid-cell-inner{border-bottom:solid 2px #ccc}.yom-data-grid-locked .yom-data-grid-cell-inner{overflow:hidden;text-overflow:ellipsis;height:38.8px}.yom-data-grid-locked-columns{border-right:solid 2px #ccc}.yom-data-grid-striped .yom-data-grid-table .yom-data-grid-row-odd td{background-color:#f8f8f8}.yom-data-grid-sortable,.yom-data-grid-sortable:hover{color:#555;text-decoration:none}.yom-data-grid-sort-arrow{display:inline-block;width:8px;height:10px;vertical-align:middle;margin-left:3px;position:relative}.yom-data-grid-sort-arrow:after,.yom-data-grid-sort-arrow:before{display:block;width:0;height:0;border-right:4px solid transparent;border-left:4px solid transparent;content:"";position:absolute;left:0}.yom-data-grid-sort-arrow:before{bottom:0;border-top:4px solid #959595}.yom-data-grid-sort-arrow:after{top:0;border-bottom:4px solid #959595}.yom-data-grid-sort-arrow-down:before{border-top:4px solid #238bfa}.yom-data-grid-sort-arrow-up:after{border-bottom:4px solid #238bfa}.yom-data-grid-header-cell-inner{position:relative}.yom-data-grid-header-cell-inner .yom-data-grid-filter-icon{position:absolute;width:20px;height:20px;line-height:20px;text-align:center;top:50%;right:5px;margin-top:-10px;cursor:pointer;color:#555;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-header-cell-inner .yom-data-grid-filter-icon:hover{background-color:#eee}.yom-data-grid-header-cell-inner .yom-data-grid-filter-icon-left{left:9px;right:auto}.yom-data-grid-header-cell-inner:hover .yom-data-grid-filter-remove-icon .icon-remove{display:inline-block}.yom-data-grid-header-cell-inner:hover .yom-data-grid-filter-remove-icon .icon-filter{display:none}.yom-data-grid-header-cell-inner-filterable{padding-right:24px}.yom-data-grid-filter-panel{position:absolute;border:1px solid #ccc;background-color:#fff;width:252px;padding:10px;display:none;z-index:999;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-filter-panel h3{font-size:14px;margin:0 0 10px;color:#555}.yom-data-grid-filter-panel .remark{font-style:italic;color:#888}.yom-data-grid-filter-panel .alert-danger{padding:10px}.yom-data-grid-filter-panel .set-container{background-color:#f8f8f8;padding-left:10px;overflow-x:hidden;overflow-y:auto;max-height:145px;margin-bottom:10px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-filter-panel .btn-confirm{margin-right:10px}.yom-data-grid-filter-remove-icon{color:#555}.yom-data-grid-filter-remove-icon .icon-remove{display:none}.yom-data-grid-filter-remove-icon:hover{color:#555}.yom-data-grid-setting-icon{position:absolute;width:20px;height:20px;line-height:20px;text-align:center;top:-20px;left:0;background-color:#eee;cursor:pointer;color:#555;z-index:1;display:none;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-container-sequence .yom-data-grid-setting-icon{top:9px;left:9px}.yom-data-grid-container:hover .yom-data-grid-setting-icon{display:block}.yom-data-grid-setting-panel{position:absolute;left:0;top:0;border:1px solid #ccc;background-color:#fff;width:300px;padding:10px;display:none;z-index:2;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-setting-panel h3,.yom-data-grid-setting-panel h4{font-size:14px;margin:0 0 10px;color:#555}.yom-data-grid-setting-panel h4{margin-top:10px}.yom-data-grid-setting-panel .alert-danger{padding:10px}.yom-data-grid-setting-panel .columns-container{position:relative;padding-right:40px}.yom-data-grid-setting-panel .yom-data-grid-setting-columns-container-inner{background-color:#f8f8f8;overflow-x:hidden;overflow-y:auto;max-height:255px;padding:5px 0;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-setting-panel .lock-options{margin-bottom:10px}.yom-data-grid-setting-panel .lock-options .radio-inline{margin-left:0;margin-right:10px}.yom-data-grid-setting-column-all{padding-left:10px}.yom-data-grid-setting-column-item{padding:3px 10px;position:relative;cursor:pointer}.yom-data-grid-setting-column-item.selected{background-color:#ddd}.yom-data-grid-setting-btn-move-down,.yom-data-grid-setting-btn-move-up{position:absolute;right:0;top:50%;margin-top:-40px;min-width:0!important}.yom-data-grid-setting-btn-move-down{position:absolute;right:0;top:50%;margin-top:10px}.yom-data-grid-btn-confirm-setting{margin-right:10px}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-checked td{background-color:#ebf5ff}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-error td{background-color:#f2dede}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-hl td{background-color:#ffe}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-checked.yom-data-grid-row-hl td{background-color:#d4e9ff}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-error.yom-data-grid-row-hl td{background-color:#ebcccc}.yom-data-grid .yom-data-grid-table .yom-data-grid-sequence-cell{background-color:#fff!important;border-bottom:none;font-weight:700;color:#888}.yom-data-grid-sequence-cell .yom-data-grid-cell-inner{border-bottom:none;text-overflow:clip;padding-left:0;padding-right:0}.yom-data-grid-checkbox-cell .yom-data-grid-cell-inner{text-overflow:clip}.yom-data-grid-checkbox-cell input[type=checkbox]{margin:0}.yom-data-grid-form-cell .yom-data-grid-cell-inner{padding:2px}.yom-data-grid-row-clickable .yom-data-grid-content-cell{cursor:pointer}.yom-data-grid-container-height .yom-data-grid-columns,.yom-data-grid-container-height .yom-data-grid-locked-columns{position:absolute;top:0;left:0;right:0;bottom:0}.yom-data-grid-container-height .yom-data-grid-body{position:absolute;top:39px;left:0;right:0;bottom:0}.yom-data-grid-container-height .yom-data-grid-columns .yom-data-grid-body,.yom-data-grid-container-height .yom-data-grid-columns .yom-data-grid-header{overflow-y:scroll}.yom-data-grid-container-height .yom-data-grid-header-rows-1 .yom-data-grid-body{top:78px}.yom-data-grid-container-height .yom-data-grid-header-rows-2 .yom-data-grid-body{top:117px}.yom-data-grid-container-height .yom-data-grid-header-rows-3 .yom-data-grid-body{top:156px}.yom-data-grid-container-height .yom-data-grid-header-rows-4 .yom-data-grid-body{top:195px}', moduleUri);
+var expo = yomCssModuleHelper("", '.yom-data-grid .yom-data-grid-header,.yom-data-grid-table th{background-color:#fafafa}.yom-data-grid-filter-panel .btn-default,.yom-data-grid-filter-panel .btn-primary,.yom-data-grid-setting-panel .btn-default,.yom-data-grid-setting-panel .btn-primary{min-width:62px}.yom-data-grid-container{height:100%;position:relative;border-radius:4px 4px 0 0}.yom-data-grid{border:1px solid #e8e8e8;height:100%;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid:after,.yom-data-grid:before{display:table;content:"";line-height:0}.yom-data-grid:after{clear:both}.yom-data-grid-locked table{table-layout:fixed}.yom-data-grid-locked table td,.yom-data-grid-locked table th{line-height:20px}.yom-data-grid-locked table td i[class^=icon]{font-size:17.5px}.yom-data-grid .yom-data-grid-body,.yom-data-grid .yom-data-grid-header{overflow:hidden}.yom-data-grid-table th{text-align:left}.yom-data-grid-striped .yom-data-grid-table .yom-data-grid-row-odd td,.yom-data-grid-table td{background-color:#fff}.yom-data-grid-cell-inner{line-height:15.4px;font-size:14px;padding:11px 9px}.yom-data-grid-cell-inner-left{text-align:left}.yom-data-grid-cell-inner-center{text-align:center}.yom-data-grid-cell-inner-right{text-align:right}.yom-data-grid-cell-inner-dummy{height:1px}.yom-data-grid-bordered th .yom-data-grid-cell-inner,.yom-data-grid-bordered-v [class*=yom-data-grid-header-rows-] th .yom-data-grid-cell-inner,.yom-data-grid-bordered-v th .yom-data-grid-cell-inner,[class*=yom-data-grid-header-rows-] th .yom-data-grid-cell-inner,th .yom-data-grid-cell-inner{border-bottom:solid 1px #e8e8e8}.yom-data-grid-bordered-h .yom-data-grid-sequence-cell .yom-data-grid-cell-inner,.yom-data-grid-sequence-cell .yom-data-grid-cell-inner{border-right:solid 1px #e8e8e8}.yom-data-grid-bordered .yom-data-grid-cell-inner{border-bottom:solid 1px #e8e8e8;border-right:solid 1px #e8e8e8}.yom-data-grid-bordered .yom-data-grid-last-cell .yom-data-grid-cell-inner,.yom-data-grid-bordered-h .yom-data-grid-cell-inner{border-right:none}.yom-data-grid-bordered .yom-data-grid-last-row .yom-data-grid-cell-inner,.yom-data-grid-bordered-v .yom-data-grid-cell-inner{border-bottom:none}.yom-data-grid-bordered .yom-data-grid-header .yom-data-grid-last-row .yom-data-grid-cell-inner{border-bottom:solid 1px #e8e8e8}.yom-data-grid-locked .yom-data-grid-cell-inner{overflow:hidden;text-overflow:ellipsis;height:38.8px}.yom-data-grid-locked-columns{border-right:solid 1px #e8e8e8}.yom-data-grid-locked-columns-scroll{box-shadow:6px 0 6px -4px rgba(0,0,0,.15);z-index:99}.yom-data-grid-sortable,.yom-data-grid-sortable:hover{color:#555;text-decoration:none}.yom-data-grid-sort-arrow{display:inline-block;width:8px;height:10px;vertical-align:baseline;margin-right:3px;position:relative;margin-left:.57142857em}.yom-data-grid-sort-arrow:after,.yom-data-grid-sort-arrow:before{display:block;width:0;height:0;border-right:4px solid transparent;border-left:4px solid transparent;content:"";position:absolute;left:0}.yom-data-grid-sort-arrow:before{bottom:0;border-top:4px solid #aeaeae}.yom-data-grid-sort-arrow:after{top:0;border-bottom:4px solid #aeaeae}.yom-data-grid-sort-arrow-down:before{border-top:4px solid #325fdc}.yom-data-grid-sort-arrow-up:after{border-bottom:4px solid #325fdc}.yom-data-grid-header-cell-inner{position:relative}.yom-data-grid-header-cell-inner .yom-data-grid-filter-icon{position:absolute;width:20px;height:38.8px;line-height:38.8px;text-align:center;top:0;right:0;cursor:pointer;margin:0;color:#aeaeae;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-header-cell-inner .yom-data-grid-filter-icon:hover{background-color:#eee}.yom-data-grid-header-cell-inner:hover .yom-data-grid-filter-remove-icon .icon-remove{display:inline-block}.yom-data-grid-header-cell-inner:hover .yom-data-grid-filter-remove-icon .icon-filter{display:none}.yom-data-grid-header-cell-inner>a,.yom-data-grid-header-cell-inner>span{white-space:nowrap}.yom-data-grid-header-cell-inner-filterable{padding-right:24px}.yom-data-grid-header-cell-inner-filterable.yom-data-grid-header-cell-inner-align-right{padding-right:9px;padding-left:24px}.yom-data-grid-header-cell-inner-filterable.yom-data-grid-header-cell-inner-align-right .yom-data-grid-filter-icon{left:5px;right:auto}.yom-data-grid-filter-panel{position:absolute;border:1px solid #ccc;background-color:#fff;width:252px;padding:10px;display:none;z-index:999;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-filter-panel h3{font-size:14px;margin:0 0 10px;color:#555}.yom-data-grid-filter-panel .remark{font-style:italic;color:#888}.yom-data-grid-filter-panel .alert-danger{padding:10px}.yom-data-grid-filter-panel .set-container{background-color:#f8f8f8;padding-left:10px;overflow-x:hidden;overflow-y:auto;max-height:145px;margin-bottom:10px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-filter-panel .btn-confirm{margin-right:10px}.yom-data-grid-filter-remove-icon{color:#555}.yom-data-grid-filter-remove-icon .icon-remove{display:none}.yom-data-grid-filter-remove-icon:hover{color:#555}.yom-data-grid-setting-icon{position:absolute;width:20px;height:20px;line-height:20px;text-align:center;top:-20px;left:0;background-color:#eee;cursor:pointer;color:#555;z-index:1;display:none;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-container-sequence .yom-data-grid-setting-icon{top:9px;left:9px}.yom-data-grid-container:hover .yom-data-grid-setting-icon{display:block}.yom-data-grid-setting-panel{position:absolute;left:0;top:0;border:1px solid #ccc;background-color:#fff;width:300px;padding:10px;display:none;z-index:2;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-setting-panel h3,.yom-data-grid-setting-panel h4{font-size:14px;margin:0 0 10px;color:#555}.yom-data-grid-setting-panel h4{margin-top:10px}.yom-data-grid-setting-panel .alert-danger{padding:10px}.yom-data-grid-setting-panel .columns-container{position:relative;padding-right:40px}.yom-data-grid-setting-panel .yom-data-grid-setting-columns-container-inner{background-color:#f8f8f8;overflow-x:hidden;overflow-y:auto;max-height:255px;padding:5px 0;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.yom-data-grid-setting-panel .lock-options{margin-bottom:10px}.yom-data-grid-setting-panel .lock-options .radio-inline{margin-left:0;margin-right:10px}.yom-data-grid-setting-column-all{padding-left:10px}.yom-data-grid-setting-column-item{padding:3px 10px;position:relative;cursor:pointer}.yom-data-grid-setting-column-item.selected{background-color:#ddd}.yom-data-grid-setting-btn-move-down,.yom-data-grid-setting-btn-move-up{position:absolute;right:0;top:50%;margin-top:-40px;min-width:0!important}.yom-data-grid-setting-btn-move-down{position:absolute;right:0;top:50%;margin-top:10px}.yom-data-grid-btn-confirm-setting{margin-right:10px}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-checked td{background-color:#ebf5ff}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-error td{background-color:#f2dede}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-checked.yom-data-grid-row-hl td,.yom-data-grid .yom-data-grid-table .yom-data-grid-row-hl td{background-color:#e6f7ff}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-error.yom-data-grid-row-hl td{background-color:#ebcccc}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-checked.yom-data-grid-row-click-hl td,.yom-data-grid .yom-data-grid-table .yom-data-grid-row-click-hl td{background-color:#e6f7ff}.yom-data-grid .yom-data-grid-table .yom-data-grid-row-error.yom-data-grid-row-click-hl td{background-color:#f3c4c4}.yom-data-grid .yom-data-grid-table .yom-data-grid-sequence-cell{background-color:#fff!important;border-bottom:none;font-weight:700;color:#888}.yom-data-grid-sequence-cell .yom-data-grid-cell-inner{border-bottom:none;text-overflow:clip;padding-left:0;padding-right:0}.yom-data-grid-checkbox-cell .yom-data-grid-cell-inner{text-overflow:clip}.yom-data-grid-form-cell .yom-data-grid-cell-inner{padding:2px}.yom-data-grid-form-cell .yom-data-grid-cell-inner>.btn-icon{min-width:36px;margin-right:2px;padding-left:0;padding-right:0}.yom-data-grid-form-cell .yom-data-grid-cell-inner>.btn-icon.btn-sm{min-width:32px;margin-right:4px;margin-top:2px}.yom-data-grid-form-cell .yom-data-grid-cell-inner>.btn-icon:last-child{margin-right:0}.yom-data-grid-bordered .yom-data-grid-form-cell .yom-data-grid-cell-inner{padding-left:2px;padding-right:2px}.yom-data-grid-form-cell .yom-data-grid-cell-inner-left .btn-icon.btn-sm:first-child{margin-left:2px}.yom-data-grid-row-clickable .yom-data-grid-content-cell{cursor:pointer}.yom-data-grid-container-height .yom-data-grid-columns,.yom-data-grid-container-height .yom-data-grid-locked-columns{position:absolute;top:0;left:0;right:0;bottom:0}.yom-data-grid-container-height .yom-data-grid-body{position:absolute;top:40px;left:0;right:0;bottom:0}.yom-data-grid-container-height .yom-data-grid-columns .yom-data-grid-body,.yom-data-grid-container-height .yom-data-grid-columns .yom-data-grid-header{overflow-y:scroll}.yom-data-grid-container-height .yom-data-grid-header-rows-1 .yom-data-grid-body{top:80px}.yom-data-grid-container-height .yom-data-grid-header-rows-2 .yom-data-grid-body{top:120px}.yom-data-grid-container-height .yom-data-grid-header-rows-3 .yom-data-grid-body{top:160px}.yom-data-grid-container-height .yom-data-grid-header-rows-4 .yom-data-grid-body{top:200px}', moduleUri);
 
 module.exports = expo;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(9)(module)))
@@ -278,7 +278,7 @@ function render($data, $opt) {
             if (column.type == "checkbox") {
                 columnHeader += "";
                 if (!(maxSelection > 0)) {
-                    columnHeader += '<input class="yom-data-grid-check-box-all" type="checkbox" ' + (isAllChecked ? "checked" : "") + " />";
+                    columnHeader += '<label class="yom-data-grid-check-box-wrapper yom-data-grid-check-box-all-wrapper"><span class="yom-data-grid-check-box"><input class="yom-data-grid-check-box-input yom-data-grid-check-box-all" type="checkbox" ' + (isAllChecked ? "checked" : "") + ' /><span class="yom-data-grid-check-box-inner"></span></label>';
                 } else {
                     columnHeader += "&nbsp;";
                 }
@@ -326,7 +326,7 @@ function render($data, $opt) {
             if (column.type == "checkbox") {
                 columnHeader += "";
                 if (!(maxSelection > 0)) {
-                    columnHeader += '<input class="yom-data-grid-check-box-all" type="checkbox" ' + (isAllChecked ? "checked" : "") + " />";
+                    columnHeader += '<label class="yom-data-grid-check-box-wrapper yom-data-grid-check-box-all-wrapper"><span class="yom-data-grid-check-box"><input class="yom-data-grid-check-box-input yom-data-grid-check-box-all" type="checkbox" ' + (isAllChecked ? "checked" : "") + ' /><span class="yom-data-grid-check-box-inner"></span></label>';
                 } else {
                     columnHeader += "&nbsp;";
                 }
@@ -495,9 +495,9 @@ function render($data, $opt) {
                                 if (isHeaderData) {
                                     _$out_ += "&nbsp;";
                                 } else if (checkable) {
-                                    _$out_ += '<input class="yom-data-grid-check-box" data-row-index="' + i + '" type="checkbox" ' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "checked" : "") + " />";
+                                    _$out_ += '<label class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked" : "yom-data-grid-check-box-wrapper") + '"><span class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box yom-data-grid-check-box-checked" : "yom-data-grid-check-box") + '"><input class="yom-data-grid-check-box-input" data-row-index="' + i + '" type="checkbox" ' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "checked" : "") + ' /><span class="yom-data-grid-check-box-inner"></span></label>';
                                 } else {
-                                    _$out_ += '<input class="yom-data-grid-check-box" data-row-index="' + i + '" type="checkbox" disabled />';
+                                    _$out_ += '<label class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked" : "yom-data-grid-check-box-wrapper") + '"><span class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box yom-data-grid-check-box-checked" : "yom-data-grid-check-box") + '"><input class="yom-data-grid-check-box-input" data-row-index="' + i + '" type="checkbox" disabled /><span class="yom-data-grid-check-box-inner"></span></label>';
                                 }
                             } else {
                                 _$out_ += "" + (reactElement ? "" : displayValue || "&nbsp;") + "";
@@ -626,9 +626,9 @@ function render($data, $opt) {
                             if (isHeaderData) {
                                 _$out_ += "&nbsp;";
                             } else if (checkable) {
-                                _$out_ += '<input class="yom-data-grid-check-box" data-row-index="' + i + '" type="checkbox" ' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "checked" : "") + " />";
+                                _$out_ += '<label class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked" : "yom-data-grid-check-box-wrapper") + '"><span class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box yom-data-grid-check-box-checked" : "yom-data-grid-check-box") + '"><input class="yom-data-grid-check-box-input" data-row-index="' + i + '" type="checkbox" ' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "checked" : "") + ' /><span class="yom-data-grid-check-box-inner"></span></label>';
                             } else {
-                                _$out_ += '<input class="yom-data-grid-check-box" data-row-index="' + i + '" type="checkbox" disabled />';
+                                _$out_ += '<label class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked" : "yom-data-grid-check-box-wrapper") + '"><span class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box yom-data-grid-check-box-checked" : "yom-data-grid-check-box") + '"><input class="yom-data-grid-check-box-input" data-row-index="' + i + '" type="checkbox" disabled /><span class="yom-data-grid-check-box-inner"></span></label>';
                             }
                         } else {
                             _$out_ += "" + (reactElement ? "" : displayValue || "&nbsp;") + "";
@@ -761,9 +761,9 @@ function render($data, $opt) {
                                 if (isHeaderData) {
                                     _$out_ += "&nbsp;";
                                 } else if (checkable) {
-                                    _$out_ += '<input class="yom-data-grid-check-box" data-row-index="' + i + '" type="checkbox" ' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "checked" : "") + " />";
+                                    _$out_ += '<label class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked" : "yom-data-grid-check-box-wrapper") + '"><span class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box yom-data-grid-check-box-checked" : "yom-data-grid-check-box") + '"><input class="yom-data-grid-check-box-input" data-row-index="' + i + '" type="checkbox" ' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "checked" : "") + ' /><span class="yom-data-grid-check-box-inner"></span></label>';
                                 } else {
-                                    _$out_ += '<input class="yom-data-grid-check-box" data-row-index="' + i + '" type="checkbox" disabled />';
+                                    _$out_ += '<label class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked" : "yom-data-grid-check-box-wrapper") + '"><span class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box yom-data-grid-check-box-checked" : "yom-data-grid-check-box") + '"><input class="yom-data-grid-check-box-input" data-row-index="' + i + '" type="checkbox" disabled /><span class="yom-data-grid-check-box-inner"></span></label>';
                                 }
                             } else {
                                 _$out_ += "" + (reactElement ? "" : displayValue || "&nbsp;") + "";
@@ -892,9 +892,9 @@ function render($data, $opt) {
                             if (isHeaderData) {
                                 _$out_ += "&nbsp;";
                             } else if (checkable) {
-                                _$out_ += '<input class="yom-data-grid-check-box" data-row-index="' + i + '" type="checkbox" ' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "checked" : "") + " />";
+                                _$out_ += '<label class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked" : "yom-data-grid-check-box-wrapper") + '"><span class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box yom-data-grid-check-box-checked" : "yom-data-grid-check-box") + '"><input class="yom-data-grid-check-box-input" data-row-index="' + i + '" type="checkbox" ' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "checked" : "") + ' /><span class="yom-data-grid-check-box-inner"></span></label>';
                             } else {
-                                _$out_ += '<input class="yom-data-grid-check-box" data-row-index="' + i + '" type="checkbox" disabled />';
+                                _$out_ += '<label class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box-wrapper yom-data-grid-check-box-wrapper-checked" : "yom-data-grid-check-box-wrapper") + '"><span class="' + (selectedIndex.length && selectedIndex.indexOf(i) >= 0 ? "yom-data-grid-check-box yom-data-grid-check-box-checked" : "yom-data-grid-check-box") + '"><input class="yom-data-grid-check-box-input" data-row-index="' + i + '" type="checkbox" disabled /><span class="yom-data-grid-check-box-inner"></span></label>';
                             }
                         } else {
                             _$out_ += "" + (reactElement ? "" : displayValue || "&nbsp;") + "";
@@ -1359,6 +1359,14 @@ $.extend(YomDataGrid.prototype, {
 		} else if(y < 0 && y > -1) {
 			y = -1;
 		}
+		if($.contains(scrollBody, evt.target)) {
+			if (scrollBody.scrollLeft > 0 && scrollBody.scrollLeft + $(scrollBody).width() <= scrollBody.scrollWidth) {
+				$('.yom-data-grid-locked-columns').addClass('yom-data-grid-locked-columns-scroll')
+			} else {
+				$('.yom-data-grid-locked-columns').removeClass('yom-data-grid-locked-columns-scroll')
+			}
+		}
+
 		if($.contains(scrollBody, evt.target) && (scrollBody.scrollLeft > 0 && scrollBody.scrollLeft + $(scrollBody).width() < scrollBody.scrollWidth || scrollBody.scrollLeft === 0 && x > 0 || scrollBody.scrollLeft + $(scrollBody).width() == scrollBody.scrollWidth && x < 0)) {
 			return;
 		}
@@ -1415,12 +1423,15 @@ $.extend(YomDataGrid.prototype, {
 		if (checkedCount && uncheckedCount) {
 			checkboxAll.checked = true;
 			checkboxAll.indeterminate = true;
+			checkbox.addClass('yom-data-grid-check-box-indeterminate')
 		} else if (checkedCount) {
 			checkboxAll.indeterminate = false;
 			checkboxAll.checked = true;
+			checkbox.removeClass('yom-data-grid-check-box-indeterminate')
 		} else {
 			checkboxAll.indeterminate = false;
 			checkboxAll.checked = false;
+			checkbox.removeClass('yom-data-grid-check-box-indeterminate')
 		}
 	},
 
@@ -1695,7 +1706,7 @@ $.extend(YomDataGrid.prototype, {
 			var cell = $(this).closest('[data-column-id]');
 			var columnId = cell.attr('data-column-id');
 			self._removeFilter(columnId);
-		}).delegate('.yom-data-grid-check-box, .yom-data-grid-check-box-all', 'click', function(evt) {
+		}).delegate('.yom-data-grid-check-box-input, .yom-data-grid-check-box-all', 'click', function(evt) {
 			var rowIndex = $(this).attr('data-row-index');
 			var allChecked = true;
 			var checked = this.checked;
@@ -1713,6 +1724,8 @@ $.extend(YomDataGrid.prototype, {
 					allChecked = self.isAllChecked();
 					self._setCheckboxAllStatus(true);
 					$('[data-grid-row="' + rowIndex + '"]', self._container).addClass('yom-data-grid-row-checked');
+					$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').addClass('yom-data-grid-check-box-wrapper-checked');
+					$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').addClass('yom-data-grid-check-box-checked');
 				} else {
 					allChecked = false;
 					if(self.isAnyChecked()) {
@@ -1721,6 +1734,8 @@ $.extend(YomDataGrid.prototype, {
 						self._setCheckboxAllStatus(false);
 					}
 					$('[data-grid-row="' + rowIndex + '"]', self._container).removeClass('yom-data-grid-row-checked');
+					$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').removeClass('yom-data-grid-check-box-wrapper-checked');
+					$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-checked');
 				}
 			}
 			if(self._opt.onSelect) {
@@ -1832,8 +1847,16 @@ $.extend(YomDataGrid.prototype, {
 			checkbox.checked = checked;
 			if(this.isAllChecked() || !this.isAnyChecked()) {
 				checkbox.indeterminate = false;
+				$('.yom-data-grid-check-box-all-wrapper .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-indeterminate')
+				// if (this.isAllChecked) {
+				// 	$('.yom-data-grid-check-box-all-wrapper').addClass('yom-data-grid-check-box-wrapper-checked')
+				// 	$('.yom-data-grid-check-box-all-wrapper .yom-data-grid-check-box').addClass('yom-data-grid-check-box-checked')
+				// }
 			} else {
 				checkbox.indeterminate = true;
+				$('.yom-data-grid-check-box-all-wrapper .yom-data-grid-check-box').addClass('yom-data-grid-check-box-indeterminate')
+				$('.yom-data-grid-check-box-all-wrapper').removeClass('yom-data-grid-check-box-wrapper-checked')
+				$('.yom-data-grid-check-box-all-wrapper .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-checked')
 			}
 		}
 	},
@@ -1964,7 +1987,7 @@ $.extend(YomDataGrid.prototype, {
 
 	isAllChecked: function() {
 		var allChecked = false;
-		$('.yom-data-grid-check-box[data-row-index]', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input[data-row-index]', this._container).each(function(i, item) {
 			if(item.checked && !item.disabled) {
 				allChecked = true;
 			} else if(!item.disabled) {
@@ -1977,7 +2000,7 @@ $.extend(YomDataGrid.prototype, {
 
 	isAnyChecked: function() {
 		var allChecked = false;
-		$('.yom-data-grid-check-box[data-row-index]', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input[data-row-index]', this._container).each(function(i, item) {
 			if(item.checked && !item.disabled) {
 				allChecked = true;
 				return false;
@@ -2217,7 +2240,7 @@ $.extend(YomDataGrid.prototype, {
 	getSelectedIndex: function() {
 		var self = this;
 		var res = [];
-		$('.yom-data-grid-check-box', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input', this._container).each(function(i, item) {
 			var index = parseInt($(this).attr('data-row-index'));
 			if(this.checked && index >= 0) {
 				res.push(index);
@@ -2229,7 +2252,7 @@ $.extend(YomDataGrid.prototype, {
 	getSelectedData: function(dataProperty, columnId) {
 		var self = this;
 		var res = [];
-		$('.yom-data-grid-check-box', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input', this._container).each(function(i, item) {
 			var index = $(this).attr('data-row-index');
 			if(item.checked) {
 				res.push(self.getDataByRowIndex(index, dataProperty, columnId));
@@ -2262,7 +2285,7 @@ $.extend(YomDataGrid.prototype, {
 	},
 
 	getSelection: function(rowIndex) {
-		var checkbox = $('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box')[0];
+		var checkbox = $('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-input')[0];
 		if(!checkbox || checkbox.disabled) {
 			return false;
 		}
@@ -2275,7 +2298,7 @@ $.extend(YomDataGrid.prototype, {
 			this._opt.onExceedMaxSelection && this._opt.onExceedMaxSelection(this._opt.maxSelection);
 			return false;
 		}
-		var checkbox = $('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box')[0];
+		var checkbox = $('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-input')[0];
 		if(!checkbox || checkbox.disabled || checkbox.checked == checked) {
 			return false;
 		}
@@ -2285,6 +2308,8 @@ $.extend(YomDataGrid.prototype, {
 			allChecked = this.isAllChecked();
 			this._setCheckboxAllStatus(true);
 			$('[data-grid-row="' + rowIndex + '"]', this._container).addClass('yom-data-grid-row-checked');
+			$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').addClass('yom-data-grid-check-box-wrapper-checked');
+			$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').addClass('yom-data-grid-check-box-checked');
 		} else {
 			allChecked = false;
 			if(this.isAnyChecked()) {
@@ -2293,6 +2318,8 @@ $.extend(YomDataGrid.prototype, {
 				this._setCheckboxAllStatus(false);
 			}
 			$('[data-grid-row="' + rowIndex + '"]', this._container).removeClass('yom-data-grid-row-checked');
+			$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').removeClass('yom-data-grid-check-box-wrapper-checked');
+			$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-checked');
 		}
 		if(this._opt.onSelect) {
 			this._opt.onSelect(rowIndex, checked, this._data[rowIndex], allChecked);
@@ -2308,15 +2335,19 @@ $.extend(YomDataGrid.prototype, {
 
 	setAllSelection: function(checked) {
 		var self = this;
-		$('.yom-data-grid-check-box, .yom-data-grid-check-box-all', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input, .yom-data-grid-check-box-all', this._container).each(function(i, item) {
 			if(!item.disabled) {
 				var rowIndex = $(item).closest('[data-grid-row]').attr('data-grid-row');
 				item.checked = !!checked;
 				if(rowIndex >= 0) {
 					if(checked) {
 						$('[data-grid-row="' + rowIndex + '"]', self._container).addClass('yom-data-grid-row-checked');
+						$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').addClass('yom-data-grid-check-box-wrapper-checked');
+						$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').addClass('yom-data-grid-check-box-checked');
 					} else {
 						$('[data-grid-row="' + rowIndex + '"]', self._container).removeClass('yom-data-grid-row-checked');
+						$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').removeClass('yom-data-grid-check-box-wrapper-checked');
+						$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-checked');
 					}
 				}
 			}

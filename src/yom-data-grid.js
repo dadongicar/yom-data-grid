@@ -155,6 +155,14 @@ $.extend(YomDataGrid.prototype, {
 		} else if(y < 0 && y > -1) {
 			y = -1;
 		}
+		if($.contains(scrollBody, evt.target)) {
+			if (scrollBody.scrollLeft > 0 && scrollBody.scrollLeft + $(scrollBody).width() <= scrollBody.scrollWidth) {
+				$('.yom-data-grid-locked-columns').addClass('yom-data-grid-locked-columns-scroll')
+			} else {
+				$('.yom-data-grid-locked-columns').removeClass('yom-data-grid-locked-columns-scroll')
+			}
+		}
+
 		if($.contains(scrollBody, evt.target) && (scrollBody.scrollLeft > 0 && scrollBody.scrollLeft + $(scrollBody).width() < scrollBody.scrollWidth || scrollBody.scrollLeft === 0 && x > 0 || scrollBody.scrollLeft + $(scrollBody).width() == scrollBody.scrollWidth && x < 0)) {
 			return;
 		}
@@ -211,12 +219,15 @@ $.extend(YomDataGrid.prototype, {
 		if (checkedCount && uncheckedCount) {
 			checkboxAll.checked = true;
 			checkboxAll.indeterminate = true;
+			checkbox.addClass('yom-data-grid-check-box-indeterminate')
 		} else if (checkedCount) {
 			checkboxAll.indeterminate = false;
 			checkboxAll.checked = true;
+			checkbox.removeClass('yom-data-grid-check-box-indeterminate')
 		} else {
 			checkboxAll.indeterminate = false;
 			checkboxAll.checked = false;
+			checkbox.removeClass('yom-data-grid-check-box-indeterminate')
 		}
 	},
 
@@ -491,7 +502,7 @@ $.extend(YomDataGrid.prototype, {
 			var cell = $(this).closest('[data-column-id]');
 			var columnId = cell.attr('data-column-id');
 			self._removeFilter(columnId);
-		}).delegate('.yom-data-grid-check-box, .yom-data-grid-check-box-all', 'click', function(evt) {
+		}).delegate('.yom-data-grid-check-box-input, .yom-data-grid-check-box-all', 'click', function(evt) {
 			var rowIndex = $(this).attr('data-row-index');
 			var allChecked = true;
 			var checked = this.checked;
@@ -509,6 +520,8 @@ $.extend(YomDataGrid.prototype, {
 					allChecked = self.isAllChecked();
 					self._setCheckboxAllStatus(true);
 					$('[data-grid-row="' + rowIndex + '"]', self._container).addClass('yom-data-grid-row-checked');
+					$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').addClass('yom-data-grid-check-box-wrapper-checked');
+					$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').addClass('yom-data-grid-check-box-checked');
 				} else {
 					allChecked = false;
 					if(self.isAnyChecked()) {
@@ -517,6 +530,8 @@ $.extend(YomDataGrid.prototype, {
 						self._setCheckboxAllStatus(false);
 					}
 					$('[data-grid-row="' + rowIndex + '"]', self._container).removeClass('yom-data-grid-row-checked');
+					$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').removeClass('yom-data-grid-check-box-wrapper-checked');
+					$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-checked');
 				}
 			}
 			if(self._opt.onSelect) {
@@ -628,8 +643,16 @@ $.extend(YomDataGrid.prototype, {
 			checkbox.checked = checked;
 			if(this.isAllChecked() || !this.isAnyChecked()) {
 				checkbox.indeterminate = false;
+				$('.yom-data-grid-check-box-all-wrapper .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-indeterminate')
+				// if (this.isAllChecked) {
+				// 	$('.yom-data-grid-check-box-all-wrapper').addClass('yom-data-grid-check-box-wrapper-checked')
+				// 	$('.yom-data-grid-check-box-all-wrapper .yom-data-grid-check-box').addClass('yom-data-grid-check-box-checked')
+				// }
 			} else {
 				checkbox.indeterminate = true;
+				$('.yom-data-grid-check-box-all-wrapper .yom-data-grid-check-box').addClass('yom-data-grid-check-box-indeterminate')
+				$('.yom-data-grid-check-box-all-wrapper').removeClass('yom-data-grid-check-box-wrapper-checked')
+				$('.yom-data-grid-check-box-all-wrapper .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-checked')
 			}
 		}
 	},
@@ -760,7 +783,7 @@ $.extend(YomDataGrid.prototype, {
 
 	isAllChecked: function() {
 		var allChecked = false;
-		$('.yom-data-grid-check-box[data-row-index]', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input[data-row-index]', this._container).each(function(i, item) {
 			if(item.checked && !item.disabled) {
 				allChecked = true;
 			} else if(!item.disabled) {
@@ -773,7 +796,7 @@ $.extend(YomDataGrid.prototype, {
 
 	isAnyChecked: function() {
 		var allChecked = false;
-		$('.yom-data-grid-check-box[data-row-index]', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input[data-row-index]', this._container).each(function(i, item) {
 			if(item.checked && !item.disabled) {
 				allChecked = true;
 				return false;
@@ -1013,7 +1036,7 @@ $.extend(YomDataGrid.prototype, {
 	getSelectedIndex: function() {
 		var self = this;
 		var res = [];
-		$('.yom-data-grid-check-box', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input', this._container).each(function(i, item) {
 			var index = parseInt($(this).attr('data-row-index'));
 			if(this.checked && index >= 0) {
 				res.push(index);
@@ -1025,7 +1048,7 @@ $.extend(YomDataGrid.prototype, {
 	getSelectedData: function(dataProperty, columnId) {
 		var self = this;
 		var res = [];
-		$('.yom-data-grid-check-box', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input', this._container).each(function(i, item) {
 			var index = $(this).attr('data-row-index');
 			if(item.checked) {
 				res.push(self.getDataByRowIndex(index, dataProperty, columnId));
@@ -1058,7 +1081,7 @@ $.extend(YomDataGrid.prototype, {
 	},
 
 	getSelection: function(rowIndex) {
-		var checkbox = $('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box')[0];
+		var checkbox = $('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-input')[0];
 		if(!checkbox || checkbox.disabled) {
 			return false;
 		}
@@ -1071,7 +1094,7 @@ $.extend(YomDataGrid.prototype, {
 			this._opt.onExceedMaxSelection && this._opt.onExceedMaxSelection(this._opt.maxSelection);
 			return false;
 		}
-		var checkbox = $('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box')[0];
+		var checkbox = $('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-input')[0];
 		if(!checkbox || checkbox.disabled || checkbox.checked == checked) {
 			return false;
 		}
@@ -1081,6 +1104,8 @@ $.extend(YomDataGrid.prototype, {
 			allChecked = this.isAllChecked();
 			this._setCheckboxAllStatus(true);
 			$('[data-grid-row="' + rowIndex + '"]', this._container).addClass('yom-data-grid-row-checked');
+			$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').addClass('yom-data-grid-check-box-wrapper-checked');
+			$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').addClass('yom-data-grid-check-box-checked');
 		} else {
 			allChecked = false;
 			if(this.isAnyChecked()) {
@@ -1089,6 +1114,8 @@ $.extend(YomDataGrid.prototype, {
 				this._setCheckboxAllStatus(false);
 			}
 			$('[data-grid-row="' + rowIndex + '"]', this._container).removeClass('yom-data-grid-row-checked');
+			$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').removeClass('yom-data-grid-check-box-wrapper-checked');
+			$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-checked');
 		}
 		if(this._opt.onSelect) {
 			this._opt.onSelect(rowIndex, checked, this._data[rowIndex], allChecked);
@@ -1104,15 +1131,19 @@ $.extend(YomDataGrid.prototype, {
 
 	setAllSelection: function(checked) {
 		var self = this;
-		$('.yom-data-grid-check-box, .yom-data-grid-check-box-all', this._container).each(function(i, item) {
+		$('.yom-data-grid-check-box-input, .yom-data-grid-check-box-all', this._container).each(function(i, item) {
 			if(!item.disabled) {
 				var rowIndex = $(item).closest('[data-grid-row]').attr('data-grid-row');
 				item.checked = !!checked;
 				if(rowIndex >= 0) {
 					if(checked) {
 						$('[data-grid-row="' + rowIndex + '"]', self._container).addClass('yom-data-grid-row-checked');
+						$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').addClass('yom-data-grid-check-box-wrapper-checked');
+						$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').addClass('yom-data-grid-check-box-checked');
 					} else {
 						$('[data-grid-row="' + rowIndex + '"]', self._container).removeClass('yom-data-grid-row-checked');
+						$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box-wrapper').removeClass('yom-data-grid-check-box-wrapper-checked');
+						$('[data-grid-row="' + rowIndex + '"] .yom-data-grid-check-box').removeClass('yom-data-grid-check-box-checked');
 					}
 				}
 			}
